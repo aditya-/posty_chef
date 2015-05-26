@@ -52,3 +52,30 @@ virtual_mailbox_maps = mysql:/etc/postfix/virtual/mysql-virtual-mailbox-maps.cf
 virtual_alias_maps = mysql:/etc/postfix/virtual/mysql-virtual-user-aliases.cf, mysql:/etc/postfix/virtual/mysql-virtual-domain-aliases.cf
 transport_maps = mysql:/etc/postfix/virtual/mysql-virtual-transports.cf
 
+# Opendkim 
+
+milter_protocol = 2
+milter_default_action = accept
+smtpd_milters = inet:localhost:12301
+non_smtpd_milters = inet:localhost:12301
+
+
+# if you can't deliver it in an hour - it can't be delivered!
+
+maximal_queue_lifetime = 5h
+
+maximal_backoff_time = 15m
+
+minimal_backoff_time = 15m
+
+queue_run_delay = 5m
+
+
+#The default amount of delay that is inserted between individual deliveries to the same destination and  Different domains are delivered in parallel
+smtp_destination_rate_delay = 5s
+
+# delivery between two mails
+relay_destination_rate_delay = 2s
+
+# Exra recipent 
+#smtp_extra_recipient_limit = 10
