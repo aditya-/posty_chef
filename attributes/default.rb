@@ -25,7 +25,7 @@ default["posty"]["var_dir"]         = "/var/lib/misc"
 default["posty"]["ruby"]["version"] = "2.0.0-p481"
 
 default["posty"]["mail"]["hostname"] = node["hostname"]
-default["posty"]["mail"]["domain"]   = "example.org"
+default["posty"]["mail"]["domain"]   = "example"
 
 default["posty"]["db"]["host"]   = "localhost"
 default["posty"]["db"]["dbname"] = "vmail"
@@ -44,7 +44,7 @@ default["posty"]["api"]["user"]     = "root"
 default["posty"]["api"]["group"]    = "www-data"
 default["posty"]["api"]["rack_env"] = "production"
 
-default["posty"]["api"]["host"]     = "192.168.254.10"
+default["posty"]["api"]["host"]     = "example"
 default["posty"]["api"]["webpath"]  = "posty_api"
 default["posty"]["webui"]["apiurl"] = "http://#{default["posty"]["api"]["host"]}/#{default["posty"]["api"]["webpath"]}/api/v1"
 
